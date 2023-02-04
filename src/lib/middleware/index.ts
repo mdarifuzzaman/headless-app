@@ -17,6 +17,7 @@ export default async function middleware(
   req: NextRequest,
   ev: NextFetchEvent
 ): Promise<NextResponse> {
+
   const response = NextResponse.next();
 
   return (Object.values(plugins) as MiddlewarePlugin[])

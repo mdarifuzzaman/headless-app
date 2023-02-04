@@ -23,12 +23,12 @@ const JobListing = (props: JobListingProps): JSX.Element => {
 
   return (
     <main>
-      <Script
+      {/* <Script
         id="moosend_identify"
         dangerouslySetInnerHTML={{
-          __html: `mootrack('identify', 'arif@test.com', 'Arif uzzaman')`,
+          __html: `mootrack('identify', 'arif2@test.com', 'Arif uzzaman')`,
         }}
-      ></Script>
+      ></Script> */}
       <section id="job-listing">
         <h2>Job Listing</h2>
         <div className="job-listing-container">
