@@ -24,6 +24,8 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
       <Head>
         <title>{route?.fields?.pageTitle?.value || 'Page'}</title>
         <link rel="icon" href={`${publicUrl}/favicon.ico`} />
+        <script src={`${publicUrl}/scripts/moosend.js`}></script>
+        <script src={`${publicUrl}/scripts/moosend_subs.js`}></script>   
       </Head>
 
       {/*
