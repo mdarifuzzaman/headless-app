@@ -46,6 +46,7 @@ body {
   padding: 0;  
   color: #fff; 
   background-color: white;   
+  background-image: url("../../public/background-pattern-dark.svg");
 }
 
 .container {
@@ -142,6 +143,7 @@ main {
 .recent-jobs-container {
   display: flex;
   justify-content: flex-start;
+  background-image: url(../../public/background-pattern-light.svg);
   /* align-items: center;
   flex-wrap: wrap; */
 }
@@ -268,6 +270,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-image: url('../../public/background-pattern-light.svg');
 }
 
 .job-listing-box {
@@ -298,6 +301,32 @@ footer > p {
   font-size: 18px;
   margin-bottom: 10px;
 }
+
+.hero-banner {
+  background-image: url("../../public/speaker-chris-williams-hero.png");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-banner h1 {
+  font-size: 48px;
+  color: white;
+  text-shadow: 1px 1px #333;
+}
+
+.hero-banner p {
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 
 
 

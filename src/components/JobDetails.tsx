@@ -42,7 +42,8 @@ const getSearchData = async () => {
   });
 
   const query = `query {
-    search(where: {
+    search(
+      where: {
       AND: [
           {
             name: "_templates"
@@ -50,7 +51,7 @@ const getSearchData = async () => {
             operator: CONTAINS
           },
           {
-            name: "_path",
+            name: "path",
             value: "${new URLSearchParams(window.location.search).get('jobId')}",
             operator: EQ
           },

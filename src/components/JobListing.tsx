@@ -72,18 +72,7 @@ const JobListing = (props: JobListingProps): JSX.Element => {
               </div>
             ))}
         </div>
-      </section>
-      <article>
-        <h3>
-          <a
-            data-mooform-id="ebb65c8c-5c8e-41fd-a8e7-f56dd75f7cd5"
-            href="https://mdar.m-pages.com/U3LbsB/subscribe-to-get-job-notification"
-          >
-            Subscribe
-          </a>{' '}
-          Us
-        </h3>
-      </article>
+      </section>      
     </main>
   );
 };
