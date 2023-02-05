@@ -8,9 +8,7 @@ import { SitecorePageProps } from 'lib/page-props';
 //  bootstrap is used here to provide a clean layout for samples, without needing extra CSS in the sample app
 //  nprogress provides a loading indicator on page/route changes
 // Remove these in package.json as well if removed here.
-import 'bootstrap/dist/css/bootstrap.css';
-import 'nprogress/nprogress.css';
-import 'assets/app.css';
+import '../assets/main.scss';
 
 NProgress.configure({ showSpinner: false, trickleSpeed: 100 });
 

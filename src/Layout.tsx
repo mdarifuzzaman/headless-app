@@ -18,6 +18,8 @@ interface LayoutProps {
 
 const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
   const { route } = layoutData.sitecore;
+  const isPageEditing = layoutData.sitecore.context.pageEditing;
+  const mainClassPageEditing = isPageEditing ? 'editing-mode' : 'prod-mode';
 
   return (
     <>
@@ -39,7 +41,20 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
 
       <Navigation />
       {/* root placeholder for the app, which we add components to using route data */}
-      <div className="container">{route && <Placeholder name="jss-main" rendering={route} />}</div>
+      
+      <div className={mainClassPageEditing}>
+        <header>
+          <div id="header">{route && <Placeholder name="jss-header" rendering={route} />}</div>
+        </header>
+        <main>
+          {/* <div id="content">{route && <Placeholder name="headless-main" rendering={route} />}</div> */}
+          <div id="content">{route && <Placeholder name="jss-main" rendering={route} />}</div>
+        </main>
+        <footer>
+          <div id="footer">{route && <Placeholder name="jss-footer" rendering={route} />}</div>
+        </footer>
+      </div>
+
       <footer>
         <p>Copyright © 2023 Job Board</p>
         <p>A sample job listing application, developed using Sitecore JSS </p>
