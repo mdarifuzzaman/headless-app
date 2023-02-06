@@ -50,7 +50,7 @@ const LatestJob = (props: LatestJobProps): JSX.Element => {
           ></Script>          
 
           {latestJobs && latestJobs.map((job: any) => (
-              <div className="journey-templates-card">
+              <div className="journey-templates-card" key={job?.id}>
               <div className='journey-templates-card-header'>
                 <div className='journey-templates-card-header-left'>
                   <div className='journey-templates-card-header-lifecycle-icon'></div>

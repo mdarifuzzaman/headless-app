@@ -1,11 +1,18 @@
-import { useRouter } from "next/router";
-import { deleteCookie } from 'cookies-next';
+import { deleteCookie, getCookie } from 'cookies-next';
 import Router from 'next/router';
+import { useEffect, useState } from "react";
 
 const Navigation = (): JSX.Element => {
-  const {asPath} = useRouter();
+  const [auth, setAuth] = useState("");
+  useEffect(() => {
+    const authCookie = getCookie("authCookie");
+    console.log("Found auth cookie:", authCookie);
+    setAuth(authCookie?.toString()!);
+  }, []);
+
   const logout = () => {
     deleteCookie("authCookie");
+    setAuth("");
     Router.push('/login');
   }
   return (
@@ -14,7 +21,7 @@ const Navigation = (): JSX.Element => {
         <nav>
           <a href="/">Home</a>
           <a href="/job-listing">Jobs</a>
-          <a href="/companies">Companies</a>
+          <a href="/register">Companies</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>         
           <a
@@ -25,10 +32,10 @@ const Navigation = (): JSX.Element => {
           </a>
         </nav>
 
-        {!asPath.startsWith("/login") ? <a href="" onClick={() => logout()}>Logout</a> : null }
+        { auth?.length > 0 ? <a href="" onClick={() => logout()}>Logout</a> : <a href="/login">Log In</a> }
         <form action="search" method="get">
-          <input type="text" name="keywords" placeholder="Search for jobs" />
-          <button type="submit">Search</button>
+          <input type="text" name="keywords" placeholder="Search jobs" style={{margin: "2px", padding: "8px"}}/>
+          <button type="submit" style={{margin: "2px", padding: "8px"}}>Search</button>
         </form>
       </header>
     </>

@@ -1,7 +1,6 @@
 import { Field, withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
 import { setCookie } from 'cookies-next';
 import { ComponentProps } from 'lib/component-props';
-import Router from 'next/router';
 import { useState } from 'react';
 
 declare global {
@@ -34,28 +33,20 @@ const Login = (): JSX.Element => {
       window.mootrack('identify',useName);
     }
     setCookie("authCookie", useName)
-    Router.push('/');
+    window.location.href = "/";
   };
   return (
-    <article>      
-      <div>
-        <input
-          type="text"
-          placeholder="UserName"
-          onChange={(e) => setUserName(e.target.value)}
-        ></input>
+    <>
+      <div className="container">
+        <label><b>Username</b></label>
+        <input className='text' type="text" placeholder="Enter Username" name="uname" required onChange={(e) => setUserName(e.target.value)}/>
+
+        <label><b>Password</b></label>
+        <input className='password' type="password" placeholder="Enter Password" name="psw" required onChange={(e) => setPassword(e.target.value)}/>
+
+        <button type="submit" onClick={() => loginClicked()}>Login</button>
       </div>
-      <div>
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        ></input>
-      </div>
-      <div>
-        <button onClick={() => loginClicked()}>Login</button>
-      </div>
-    </article>
+    </>
   );
 };
 

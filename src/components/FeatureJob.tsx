@@ -29,7 +29,7 @@ const FeatureJob = (props: FeatureJobProps): JSX.Element => {
 
   }, []);
   return (
-    <div className="journey-templates-card">
+    <div className="journey-templates-card" key={itemId}>
       <div className='journey-templates-card-header'>
         <div className='journey-templates-card-header-left'>
           <div className='journey-templates-card-header-lifecycle-icon'></div>
