@@ -319,17 +319,19 @@ footer > p {
 }
 
 .hero-banner h1 {
-  font-size: 48px;
-  color: rgb(23, 5, 5);
+  color: rgb(247 247 247);
   text-shadow: 1px 1px #333;
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .hero-banner p {
-  font-size: 24px;
-  color: rgb(14, 237, 185);
+  color: rgb(255 141 0);
   text-shadow: 1px 1px #333;
   max-width: 800px;
   margin: 0 auto;
+  font-weight: 600;
+  font-size: 1.5em;
 }
 
 .slick-initialized .slick-slide {
