@@ -475,6 +475,20 @@ footer > p {
   float: left;
 }
 
+footer {
+  background-image: linear-gradient(to bottom right,var(--tw-gradient-stops));
+  --tw-gradient-from: #232323;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(35,35,35,0));
+  --tw-gradient-to: #0a0a0a;
+}
+
+.footer__content {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+}
+
 
 
 
