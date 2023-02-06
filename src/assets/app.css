@@ -55,6 +55,11 @@ body {
   max-width: 1580px;
 }
 
+.slds-p-horizontal--large {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 header {
   background-color: var(--nav-color);
   color: #fff;
@@ -303,11 +308,11 @@ footer > p {
 }
 
 .hero-banner {
-  background-image: url("../../public/speaker-chris-williams-hero.png");
+  /* background-image: url("../../public/speaker-chris-williams-hero.png"); */
   background-size: cover;
   background-position: center;
   height: 500px;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -315,16 +320,157 @@ footer > p {
 
 .hero-banner h1 {
   font-size: 48px;
-  color: white;
+  color: rgb(23, 5, 5);
   text-shadow: 1px 1px #333;
 }
 
 .hero-banner p {
   font-size: 24px;
-  color: white;
+  color: rgb(14, 237, 185);
   text-shadow: 1px 1px #333;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-slide {
+  /* float: left; */
+  height: 100%;
+  min-height: 1px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.sc-jss-empty-placeholder {
+  min-width: 300px;
+  min-height: 200px;
+}
+
+.journey-templates-card {
+  background: #fff;
+  cursor: pointer;
+  border-radius: 0.75rem 0.75rem 10px 10px;
+  height: 270px;
+  min-width: 250px;
+  margin: 15px 20px;
+  position: relative;
+  box-shadow: 0 2px 0 0 rgb(0 0 0 / 10%);
+}
+
+.journey-templates-header {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.journey-templates-header-title h1 {
+  margin: 3px 10px;
+}
+.slds-text-heading--medium, .slds-text-heading_medium {
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.journey-templates-card-header[data-lifecycle-color=engagement] {
+  background-color: #0070d2;
+}
+.journey-templates-card-header {
+  padding: 16px 16px 24px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background-color: #00396b;
+  clear: both;
+}
+.journey-templates-card-header-left {
+  float: left;
+  vertical-align: top;
+}
+.journey-templates-card-header-lifecycle {
+  text-align: left;
+  height: 19px;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #f4f6f9;
+}
+.journey-templates-card-header-lifecycle-icon[data-lifecycle-icon=engagement] {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQ3LjggMzFjLS4xLS40LS4xLS44LjEtMS4yIDEuMy0yLjMgMi4xLTQuOSAyLjEtNy43IDAtOC44LTcuNi0xNi0xNy0xNi00LjQgMC04LjQgMS42LTExLjQgNC4yQzMxLjkgMTEuNSA0MCAxOS45IDQwIDMwLjFjMCAyLjUtLjUgNC45LTEuNCA3LjEgMS4xLS40IDIuMi0uOSAzLjItMS40LjQtLjIuOC0uMyAxLjItLjFsNi4xIDIuNGMuNi4yIDEuMS0uMy45LS45TDQ3LjggMzF6TTE5IDE0LjFjLTkuNCAwLTE3IDcuMi0xNyAxNiAwIDIuOC44IDUuNCAyLjEgNy43LjIuNC4zLjguMSAxLjJMMiA0NS4xYy0uMi42LjMgMS4xLjkuOUw5IDQzLjZjLjQtLjEuOC0uMSAxLjIuMSAyLjYgMS41IDUuNiAyLjMgOC44IDIuMyA5LjQgMCAxNy03LjIgMTctMTYgMC04LjctNy42LTE1LjktMTctMTUuOXoiLz48L3N2Zz4=);
+}
+.journey-templates-card-header-lifecycle-icon {
+  width: 36px;
+  height: 37px;
+  margin: 0 auto 4px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI2IDJDMTUuNSAyIDcgMTAuNSA3IDIxLjFjMCAxMy4yIDEzLjYgMjUuMyAxNy44IDI4LjUuNy42IDEuNy42IDIuNSAwQzMxLjUgNDYuMyA0NSAzNC4zIDQ1IDIxLjEgNDUgMTAuNSAzNi41IDIgMjYgMnptMCAyN2MtNC40IDAtOC0zLjYtOC04czMuNi04IDgtOCA4IDMuNiA4IDgtMy42IDgtOCA4eiIvPjwvc3ZnPg==);
+}
+.journey-templates-card-ribbon {
+  position: absolute;
+  top: 92px;
+  left: -6px;
+  width: 156px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 11px;
+  text-indent: 0.75rem;
+  text-align: left;
+  color: #fff;
+  background-color: #54698d;
+  box-shadow: 0 1px 2px 0 rgb(84 105 141 / 75%);
+  border-radius: 3px 0 0 3px;
+  padding-top: 1px;
+  text-transform: uppercase;
+}
+.journey-templates-card-content {
+  font-size: 14px;
+  line-height: 17px;
+  padding: 15px 16px 0 15px;
+  height: 126px;
+  overflow-y: auto;
+}
+.journey-templates-card-content-name {
+  display: block;
+  font-size: 18px;
+  margin: 5px 0;
+  line-height: 22px;
+  font-weight: 700;
+  color: #048ec6;
+  word-break: break-word;
+}
+.journey-templates-card-content-description {
+  font-weight: 300;
+  line-height: 18px;
+  max-width: 200px;
+  word-break: break-word;
+  color: black;
+}
+.journey-templates-card-footer {
+  width: 100%;
+  padding-right: 16px;
+  margin-top: 10px;
+  position: relative;
+  height: 30px;
+}
+.journey-templates-card-footer .tile-tag {
+  padding: 3px 8px 0;
+  margin: 0 3px;
+  height: 20px;
+  font-size: 10px;
+  background-color: #d8dde6;
+  text-align: center;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  border-radius: 10px;
+}
+.slds-float--right {
+  float: right;
+}
+
+.slds-float_left {
+  float: left;
 }
 
 

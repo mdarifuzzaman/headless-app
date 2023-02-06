@@ -39,7 +39,7 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
 
       <Navigation />
       {/* root placeholder for the app, which we add components to using route data */}
-      <div className="container">{route && <Placeholder name="jss-main" rendering={route} />}</div>
+      <div className="slds-p-horizontal--large">{route && <Placeholder name="jss-main" rendering={route} />}</div>
       <footer>
         <p>Copyright © 2023 Job Board</p>
         <p>A sample job listing application, developed using Sitecore JSS </p>

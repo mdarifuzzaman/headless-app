@@ -29,15 +29,27 @@ const FeatureJob = (props: FeatureJobProps): JSX.Element => {
 
   }, []);
   return (
-    <div className="job-listing-box">
-      <div className="job-listing-box-content">
-        <div>{props.fields.Title?.value}</div>
-        <p>{props.fields.CompanyName?.value}</p>
+    <div className="journey-templates-card">
+      <div className='journey-templates-card-header'>
+        <div className='journey-templates-card-header-left'>
+          <div className='journey-templates-card-header-lifecycle-icon'></div>
+          <div className='journey-templates-card-header-lifecycle'>Hot Jobs</div>
+        </div>        
+      </div>
+      <div className='journey-templates-card-ribbon'>IT Jobs</div>
+      <div className="journey-templates-card-content">
+        <div className='journey-templates-card-content-name'>{props.fields.Title?.value}</div>       
+        <div className='journey-templates-card-content-description'>
+          {props.fields.Description.value}
+        </div>
+        {/* <p>{props.fields.CompanyName?.value}</p>
         <p>{props.fields.Location?.value}</p>
-        <p>{props.fields.JobType?.value}</p>
-        <a href={'/job?jobId=' + itemId} className="view-job-btn">
-          View Job
-        </a>
+        <p>{props.fields.JobType?.value}</p>         */}
+      </div>
+      <div className='journey-templates-card-footer'>
+        <a className='tile-tag slds-float_right' href={'/job?jobId=' + itemId}>
+            View Job
+          </a>
       </div>
     </div>
   );

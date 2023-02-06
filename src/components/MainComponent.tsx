@@ -28,11 +28,7 @@ const MainComponent = (props: MainComponentProps): JSX.Element => {
   );
 
   return (
-    <>
-      <div className='hero-banner'>
-        <h1>Find Your Dream Job</h1>
-        <p>Discover new opportunities and take your career to the next level</p>
-      </div>
+    <>      
       <main>      
         <section id="recent-jobs">
           <h2>Recent Jobs</h2>

@@ -9,10 +9,18 @@ type FeatureJobContainerProps = ComponentProps & {
 };
 
 const FeatureJobContainer = (props: FeatureJobContainerProps): JSX.Element => (
-  <main>
-    <section id="job-listing">
-        <h2>{props.fields.heading?.value}</h2>
-        <div className="job-listing-container">
+  <>  
+    <div id="job-listing">
+        <div className='journey-templates-header'>
+          <div className='journey-templates-header-title slds-float_left'>
+            <div className='slds-float_left'>
+              <span>                
+              </span>
+            </div>
+          </div>
+          <h1 className='slds-text-heading--medium slds-float_left'>{props.fields.heading?.value}</h1>
+        </div>
+        <div className='slick-slide slick-active' style={{outline: "none"}}>
           <Script
             id="moosend_track"
             dangerouslySetInnerHTML={{
@@ -21,8 +29,8 @@ const FeatureJobContainer = (props: FeatureJobContainerProps): JSX.Element => (
           ></Script>          
           <Placeholder name="feature-job-placeholder" rendering={props.rendering} />                         
         </div>
-      </section>      
-    </main>
+      </div>      
+    </>
 );
 
 export default withDatasourceCheck()<FeatureJobContainerProps>(FeatureJobContainer);

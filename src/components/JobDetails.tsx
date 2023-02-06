@@ -47,11 +47,11 @@ const getSearchData = async () => {
       AND: [
           {
             name: "_templates"
-            value: "15E850DB-1D8A-46C9-B9FD-04AA808BBC51"
+            value: "3B0868EC-70AE-585D-94BE-4D2FA9F7A8F9"
             operator: CONTAINS
           },
           {
-            name: "path",
+            name: "_path",
             value: "${new URLSearchParams(window.location.search).get('jobId')}",
             operator: EQ
           },
