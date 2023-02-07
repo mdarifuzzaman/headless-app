@@ -14,13 +14,35 @@ type SearchResultProps = ComponentProps & {
   };
 };
 
+const filterData = (results: Array<any>, keyword: string | null): Array<any> => {
+  const filteredResult = new Array<any>();
+  if(!keyword){
+    return results;
+  }
+
+  if(!results || results.length == 0) return filteredResult;
+  results.forEach((rs: any) => {
+    rs.fields.forEach((fl: any) => {
+      if(fl.jsonValue.value.includes(keyword)){
+        filteredResult.push(rs);
+        return;
+      }
+    });
+  });
+  
+  return filteredResult;
+
+}
+
 const SearchResult = (props: SearchResultProps): JSX.Element => {
   
-  const [latestJobs, setLatestJob] = useState([]);
+  const [latestJobs, setLatestJob] = useState(Array<any>);
   useEffect(() => {
     async function loadData(){
       const result = await getSearchData(props.fields.templateId.value, props.fields.sortOrder?.value, props.fields.sortField?.value);
-      setLatestJob(result.search?.results);
+      const keyword = new URLSearchParams(window.location?.search).get('keywords');
+      const actualSeachResults = filterData(result.search?.results, keyword);      
+      setLatestJob(actualSeachResults);
     }
     loadData();
   }, []);
@@ -35,7 +57,7 @@ const SearchResult = (props: SearchResultProps): JSX.Element => {
               </span>
             </div>
           </div>
-          <h1 className='slds-text-heading--medium slds-float_left'>{props.fields.heading?.value}</h1>
+          <h1 className='slds-text-heading--medium slds-float_left'>{props.fields.heading?.value} | Total {latestJobs.length}</h1>
         </div>
         <div className='slick-slide slick-active' style={{outline: "none"}}>
           <Script
@@ -98,6 +120,27 @@ const getSearchData = async (templateId: string, sortBy: string, sortField: stri
     apiKey: '{4672EB7C-E577-43CC-8B6C-EA04611866A8}',
   });
 
+  // const query = `query {
+  //   search(rootItem:"${templateId}", keyword: "${new URLSearchParams(window.location?.search).get('keywords')}"){
+  //     results {
+  //       totalCount
+  //       items {
+  //         path
+  //         name
+  //         fields {
+  //           name
+  //           value
+  //         }
+  //       }
+  //     }
+  //   }`;
+
+  // {
+  //   name: "__text__",
+  //   value: "${new URLSearchParams(window.location?.search).get('keywords')}",
+  //   operator: CONTAINS
+  // },
+
   const query = `query {
     search(
       where: {
@@ -111,12 +154,7 @@ const getSearchData = async (templateId: string, sortBy: string, sortField: stri
             name: "_language",
             value: "en",
             operator: EQ
-          },
-          {
-            name: "_name",
-            value: "${new URLSearchParams(window.location?.search).get('keywords')}",
-            operator: CONTAINS
-          },
+          }          
         ]
       },       
       orderBy: { name: "${sortField}", direction: ${sortBy} }
