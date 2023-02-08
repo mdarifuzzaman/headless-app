@@ -21,14 +21,13 @@ const Navigation = (): JSX.Element => {
         <nav>
           <a href="/">Home</a>
           <a href="/job-listing">Jobs</a>
-          <a href="/register">Companies</a>
-          <a href="/about">About</a>
+          <a href="/register">Register</a>
           <a href="/contact">Contact</a>         
-          <a
+          <a className='alert-light text-success'
             data-mooform-id="ebb65c8c-5c8e-41fd-a8e7-f56dd75f7cd5"
             href="https://mdar.m-pages.com/U3LbsB/subscribe-to-get-job-notification"
           >
-            Subscribe Us
+            Subscribe Latest Jobs
           </a>
         </nav>
 

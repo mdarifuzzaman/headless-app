@@ -69,6 +69,10 @@ const JobListing = (props: JobListingProps): JSX.Element => {
                   </a>
                   <input type={'hidden'} value={fj.id}></input>
                 </div>
+                <div>
+                  <button>Expand</button>
+                  <button>Apply</button>
+                </div>
               </div>
             ))}
         </div>
@@ -91,7 +95,7 @@ export const getStaticProps: GetStaticComponentProps = async (rendering, layoutD
       AND: [
           {
             name: "_templates"
-            value: "15E850DB-1D8A-46C9-B9FD-04AA808BBC51"
+            value: "3B0868EC-70AE-585D-94BE-4D2FA9F7A8F9"
             operator: CONTAINS
           },
           {
@@ -100,9 +104,8 @@ export const getStaticProps: GetStaticComponentProps = async (rendering, layoutD
             operator: EQ
           }
         ]
-      }, 
-      first: 5
-      orderBy: { name: "_name", direction: ASC }
+      }
+      orderBy: { name: "__smallcreateddate_tdt", direction: DESC }
       )
     {
       results {
