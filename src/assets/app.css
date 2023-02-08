@@ -287,6 +287,7 @@ footer {
   border-radius: 5px;
   border-color: #fff;
   background-color: #485160;
+  min-width: 250px;
 }
 
 footer > p {
