@@ -41,7 +41,10 @@ const SearchResult = (props: SearchResultProps): JSX.Element => {
     async function loadData(){
       const result = await getSearchData(props.fields.templateId.value, props.fields.sortOrder?.value, props.fields.sortField?.value);
       const keyword = new URLSearchParams(window.location?.search).get('keywords');
+      window.mootrack('Search keyword:' + keyword);
+      
       const actualSeachResults = filterData(result.search?.results, keyword);      
+      window.mootrack('Total result:' + actualSeachResults.length);
       setLatestJob(actualSeachResults);
     }
     loadData();
