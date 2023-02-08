@@ -36,7 +36,7 @@ const filterData = (results: Array<any>, keyword: string | null): Array<any> => 
 
 const SearchResult = (props: SearchResultProps): JSX.Element => {
   
-  const [latestJobs, setLatestJob] = useState(Array<any>);
+  const [latestJobs, setLatestJob] = useState(Array<any>());
   useEffect(() => {
     async function loadData(){
       const result = await getSearchData(props.fields.templateId.value, props.fields.sortOrder?.value, props.fields.sortField?.value);
