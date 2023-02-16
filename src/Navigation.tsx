@@ -24,8 +24,8 @@ const Navigation = (): JSX.Element => {
           <a href="/register">Register</a>
           <a href="/contact">Contact</a>         
           <a className='alert-light text-success'
-            data-mooform-id="ebb65c8c-5c8e-41fd-a8e7-f56dd75f7cd5"
-            href="https://mdar.m-pages.com/U3LbsB/subscribe-to-get-job-notification"
+            data-mooform-id="0114b6ee-d4f4-4bcf-8db8-cd174710469c"
+            href="https://mdar.m-pages.com/e6sCrN/anotherform"
           >
             Subscribe Latest Jobs
           </a>
